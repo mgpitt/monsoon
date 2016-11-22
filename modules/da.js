@@ -5,33 +5,10 @@
 
         const sequelize = new Sequelize('postgres://uryafoec:A24a3cOosXHCaPZRDdfJ1YGZSSLT9Dti@elmer.db.elephantsql.com:5432/uryafoec');
 
-        let User = sequelize.define('user', {
-            firstName: {
-                type: Sequelize.STRING,
-                field: 'first_name' // Will result in an attribute that is firstName when user facing but first_name in the database
-            },
-            lastName: {
-                type: Sequelize.STRING
-            }
-        }, {
-            freezeTableName: true // Model tableName will be the same as the model name
-        });
+        
 
-        let Zone = sequelize.define('zone', {
-            zoneId: {
-                type: Sequelize.STRING,
-                field: 'first_name' // Will result in an attribute that is firstName when user facing but first_name in the database
-            },
-            zoneName: {
-                type: Sequelize.STRING
-            },
-            zoneOn: {
-                type: Sequelize.BOOLEAN
-            }
-            
-        }, {
-            freezeTableName: true // Model tableName will be the same as the model name
-        });
+        let Zone    = sequelize.import("../models/Zone.js");
+        let User    = sequelize.import("../models/User.js") 
 
 
         User.sync({
