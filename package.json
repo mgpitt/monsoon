@@ -1,0 +1,22 @@
+{
+  "name": "monsoon",
+  "version": "1.0.0",
+  "description": "NODE JS raspberry pi web application for irrigation and hydroponic control",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgpitt/monsoon.git"
+  },
+  "author": "morgan pitt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgpitt/monsoon/issues"
+  },
+  "homepage": "https://github.com/mgpitt/monsoon#readme",
+  "dependencies": {
+    "hapi": "^15.2.0"
+  }
+}
