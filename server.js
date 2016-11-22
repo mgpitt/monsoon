@@ -6,6 +6,8 @@ const server = new Hapi.Server();
 
 const GpioLib = require('./modules/gpio.js');
 
+const Da = require('./modules/da.js');
+
 server.connection({
 	port: 3000
 });
@@ -44,6 +46,36 @@ server.register(require('inert'), (err) => {
 		handler: function (request, reply) {
 			
 			var response = GpioLib.setZone(request.params.zId, request.params.zAction);
+
+			reply(response)
+		}
+	});
+
+	server.route({
+		method:'GET',
+		path:'/api/v1/users',
+		handler: function (request, reply) {
+
+			reply(Da.findAllUsers());
+		}
+	})
+
+	server.route({
+		method:'GET',
+		path:'/api/v1/zones',
+		handler: function (request, reply) {
+
+			reply(Da.allZones());
+		}
+	})
+
+	
+	server.route({
+		method: 'GET',
+		path: '/api/v1/zone/{zId}',
+		handler: function (request, reply) {
+			
+			var response = GpioLib.getZoneStatus(request.params.zId);
 
 			reply(response)
 		}
