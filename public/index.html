@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="monsoon">
+
+<head>
+    <meta charset="utf-8">
+    <title>Monsoon</title>
+    <meta name="description" content="monsoon">
+    <meta name="author" content="forjd.com">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="monsoon.css">
+    <link rel="stylesheet" href="animate.css">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+
+</head>
+
+<body>
+    <div class="container monsoon-container">
+        <div class="row title-bar">
+            <div class="col-xs-12">
+                <h2 class="title"><img src="./img/rain.png" alt="icon"> Monsoon <small style="color:white;">(irrigation and hydroponic controller)</small></h2>
+            </div>
+        </div>
+        <ui-view class="monsoon-content"></ui-view>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2016 Company, Inc.</p>
+            Icon made by <a title="Freepik" href="http://www.freepik.com">Freepik</a> from <a title="Flaticon" href="http://www.flaticon.com">www.flaticon.com</a>
+        </footer>
+
+    </div>
+
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="./routes.js"></script>
+    <script src="./app.js"></script>
+    <!--controllers-->
+    <script src="./components/home/home.controller.js"></script>
+    <script src="./components/test/test.controller.js"></script>
+    <!--services-->
+    <script src="./components/test/test.service.js"></script>
+    
+</body>
+
+</html>

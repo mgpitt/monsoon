@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:300,400,700');
+html,
+body {
+    background: #E0EAFC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #E0EAFC, #CFDEF3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #E0EAFC, #CFDEF3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+    font-family: 'Comfortaa', cursive;
+}
+
+.monsoon-container {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid silver;
+}
+
+.title-bar {
+    text-align: center;
+    color: white;
+    background: #D7DDE8;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(#D7DDE8, #757F9A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#D7DDE8, #757F9A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.monsoon-content {
+    padding: 10px;
+}
+
+.zone-led {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background: #D31027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(#D31027, #EA384D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#D31027, #EA384D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.zone-led.led-active {
+    
+
+background: #1D976C; /* fallback for old browsers */
+background: -webkit-linear-gradient(#1D976C , #93F9B9); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(#1D976C , #93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+/* when hiding the picture */
+/*.ng-hide-add         { animation:0.5s fadeOut; }*/
+
+/* when showing the picture */
+.ng-hide-remove      { animation:1s fadeIn; }

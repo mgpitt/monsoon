@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/mgpitt/monsoon#readme",
   "dependencies": {
-    "hapi": "^15.2.0"
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2",
+    "onoff": "^1.1.1",
+    "sequelize": "^3.27.0"
   }
 }
