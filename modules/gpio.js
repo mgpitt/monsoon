@@ -33,7 +33,7 @@
 
         function setZone(zId, zAction) {
             let zone = 'zone' + zId;
-
+            gpio.close(22);
             gpio.open(22, "output", function (err) { // Open pin 16 for output
                 gpio.write(22, 1, function () { // Set pin 16 high (1)
                     setTimeout(function () {
