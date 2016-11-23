@@ -3,6 +3,11 @@
         'use strict';
 
         const gpio = require('pi-gpio');
+        const Gpio = require('onoff').Gpio;
+
+        let relay1 = new Gpio(11, 'out');
+        let relay2 = new Gpio(12, 'out');
+
         let gpioPins = [7,11,12,13,15,16,18,22];
         let zoneStatus = {
             zone1: {
@@ -32,16 +37,9 @@
         }
 
         function relayOn(gpioId, duration){
-            return gpio.open(gpioId, "output", function(err){
-                gpio.write(gpioId, 1, function(){
-                    setTimeout(function(){
-                        gpio.close(gpioId);
-                        return {
-                            message:'relay schedule completed'
-                        }
-                    }, duration)
-                })
-            })
+            relay1.writeSync(1);
+            relay2.writeSync(0);
+            return 'relay off'
         }
 
         function setZone(zId, zAction) {
