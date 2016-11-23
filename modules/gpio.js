@@ -2,7 +2,7 @@
     function () {
         'use strict';
 
-	const Gpio = require('onoff').Gpio;
+        const gpio = require('pi-gpio');
 
         let zoneStatus = {
             zone1: {
@@ -33,12 +33,16 @@
 
         function setZone(zId, zAction) {
             let zone = 'zone' + zId;
+
+            gpio.open(22, "output", function (err) { // Open pin 16 for output
+                gpio.write(22, 1, function () { // Set pin 16 high (1)
+                    gpio.close(22); // Close pin 16
+                });
+            });
             if (zoneStatus[zone].on = true && zAction === 'off') {
                 zoneStatus[zone].on = false;
-		Gpio(0,'low');
             } else if (zoneStatus[zone].on = false && zAction === 'on') {
                 zoneStatus[zone].on = true;
-		Gpio(0, 'high');
             }
             return {
                 message: 'setZoneStatus for ' + zId + ' to: ' + zAction
