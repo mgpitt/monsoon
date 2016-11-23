@@ -1,8 +1,6 @@
 (
     function () {
         'use strict';
-
-        const gpio = require('pi-gpio');
         const Gpio = require('onoff').Gpio;
 
         let relay1 = new Gpio(11, 'out');
