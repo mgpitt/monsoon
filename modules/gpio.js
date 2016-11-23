@@ -32,10 +32,13 @@
         }
 
         function relayOn(gpioId, duration){
-            gpio.open(gpioId, "output", function(err){
+            return gpio.open(gpioId, "output", function(err){
                 gpio.write(gpioId, 1, function(){
                     setTimeout(function(){
                         gpio.close(gpioId);
+                        return {
+                            message:'relay schedule completed'
+                        }
                     }, duration)
                 })
             })
@@ -71,5 +74,6 @@
 
         exports.setZone = setZone;
         exports.getZoneStatus = getZoneStatus;
+        exports.relayOn = relayOn;
     }
 )();

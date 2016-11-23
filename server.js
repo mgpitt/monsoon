@@ -41,6 +41,15 @@ server.register(require('inert'), (err) => {
 	});
 
 	server.route({
+		method:'GET',
+		path: '/api/v1/runZone/{pin}/{duration}',
+		handler: function(request, reply){
+			reply(GpioLib.relayOn(request.params.pin, request.params.duration));
+
+		}
+	});
+
+	server.route({
 		method: 'POST',
 		path: '/api/v1/zone/{zId}/{zAction}',
 		handler: function (request, reply) {

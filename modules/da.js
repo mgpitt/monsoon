@@ -27,7 +27,7 @@
             return Zone.create({
                 zoneId: 1,
                 zoneName: 'Main Zone',
-                zoneOn: false
+                zoneOn: false,
             })
         })
 
