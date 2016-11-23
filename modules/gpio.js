@@ -3,7 +3,7 @@
         'use strict';
 
         const gpio = require('pi-gpio');
-
+        let gpioPins = [7,11,12,13,15,16,18,22];
         let zoneStatus = {
             zone1: {
                 on: false
@@ -31,16 +31,23 @@
             }
         }
 
+        function relayOn(gpioId, duration){
+            gpio.open(gpioId, "output", function(err){
+                gpio.write(gpioId, 1, function(){
+                    setTimeout(function(){
+                        gpio.close(gpioId);
+                    }, duration)
+                })
+            })
+        }
+
         function setZone(zId, zAction) {
             let zone = 'zone' + zId;
-            gpio.close(22);
-            gpio.open(22, "output", function (err) { // Open pin 16 for output
-                gpio.write(22, 1, function () { // Set pin 16 high (1)
-                    setTimeout(function () {
-                        gpio.close(22)
-                    }, 5000);
-                });
-            });
+            gpioPins.forEach(function(p){
+                setTimeout(function(){
+                    relayOn(p, 1000)
+                }, 1000)
+            })
             if (zoneStatus[zone].on = true && zAction === 'off') {
                 zoneStatus[zone].on = false;
             } else if (zoneStatus[zone].on = false && zAction === 'on') {
