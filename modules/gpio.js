@@ -2,6 +2,8 @@
     function () {
         'use strict';
 
+	const Gpio = require('onoff').Gpio;
+
         let zoneStatus = {
             zone1: {
                 on: false
@@ -33,8 +35,10 @@
             let zone = 'zone' + zId;
             if (zoneStatus[zone].on = true && zAction === 'off') {
                 zoneStatus[zone].on = false;
+		Gpio(0,'low');
             } else if (zoneStatus[zone].on = false && zAction === 'on') {
                 zoneStatus[zone].on = true;
+		Gpio(0, 'high');
             }
             return {
                 message: 'setZoneStatus for ' + zId + ' to: ' + zAction
