@@ -1,10 +1,15 @@
 (
     function () {
         'use strict';
-        const Gpio = require('onoff').Gpio;
+        const five = require("johnny-five");
+        const Raspi = require("raspi-io");
+        const board = new five.Board({
+            io: new Raspi()
+        });
 
-        let relay1 = new Gpio(11, 'high');
-        let relay2 = new Gpio(12, 'high');
+        let zone1 = new five.Relay(0);
+
+        let zone2 = new five.Relay(1);
 
         let gpioPins = [7,11,12,13,15,16,18,22];
         let zoneStatus = {
@@ -35,8 +40,9 @@
         }
 
         function relayOn(gpioId, duration){
-            relay1.writeSync(1);
-            relay2.writeSync(0);
+            console.log('relay toggle');
+           zone1.toggle();
+           zone2.toggle();
             return 'relay off'
         }
 
