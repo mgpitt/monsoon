@@ -3,8 +3,8 @@
         'use strict';
         const Gpio = require('onoff').Gpio;
 
-        let relay1 = new Gpio(11, 'out');
-        let relay2 = new Gpio(12, 'out');
+        let relay1 = new Gpio(11, 'high');
+        let relay2 = new Gpio(12, 'high');
 
         let gpioPins = [7,11,12,13,15,16,18,22];
         let zoneStatus = {
